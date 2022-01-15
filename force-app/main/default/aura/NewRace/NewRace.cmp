@@ -1,0 +1,36 @@
+<aura:component controller="NewRaceController" implements="force:appHostable,flexipage:availableforALLPageTypes" access="global">
+    <aura:attribute name="newRace" type="Race__c"
+             default="{  'sobjectType': 'Race__c',
+                              'Name': 'New Race',
+                               'Race_Type__c': '',
+                               'Date_Time__c':'',
+                               'Attended__c': false,
+                               'Results__c':''
+                    }"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    <aura:registerEvent name="appEvent" type="c:AddToRaceList"/>
+    <div>
+        <h1>Enter New Race</h1>
+        <div>
+          <p><ui:inputText label="Name" aura:id="Name" value="{!v.newRace.Name}" /></p>
+        </div>
+        <div>
+          <p><ui:inputSelect label="Race Type" aura:id="Type" value="{!v.newRace.Race_Type__c}" /></p>
+        </div>
+        <div>
+          <p><ui:inputDateTime label="Race Date" aura:id="DateTime" value="{!v.newRace.Date_Time__c}"/></p>
+        </div>
+        <div>
+          <p> <ui:inputCheckbox label="Attended?"  aura:id="Attended" value="{!v.newRace.Attended__c}"/></p>
+        </div>
+        <div>
+          <p> <ui:inputTextArea label="Results"  aura:id="Results" value="{!v.newRace.Results__c}"/></p>
+        </div>
+        <br/><br/>
+        <div>
+           <p><ui:button label="Submit" press="{!c.newRace}" /></p>
+        </div>      
+        
+    </div>
+    <br/><br/>
+</aura:component>

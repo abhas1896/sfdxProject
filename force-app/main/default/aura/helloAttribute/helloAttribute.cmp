@@ -1,0 +1,6 @@
+<aura:component >
+    
+    <aura:attribute name="strongest" type="string" default = "Levi"/>
+    the strongest character in AOT is {!v.strongest}
+	
+</aura:component>

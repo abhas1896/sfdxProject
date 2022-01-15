@@ -1,0 +1,11 @@
+<aura:component >
+    <div>
+         <h1> Hello this file add a style file</h1>
+    
+    
+   
+    
+    </div>
+	
+    
+</aura:component>

@@ -1,0 +1,20 @@
+<aura:component >
+    
+    <aura:attribute name="num1" type="Integer" default="420" />
+     <aura:attribute name="num2" type="Integer" default="10" />
+	 <aura:attribute name="sum" type="Integer"  />
+     {!v.num1} + {!v.num2} = {!v.sum}
+    <br/><br/>
+    
+    <ui:button label="Press me" press="{!c.add}" />
+    <br/><br/>
+    <aura:attribute name="mul1" type="decimal" default="14.6" />
+     <aura:attribute name="mul2" type="decimal" default="24.2" />
+     <aura:attribute name="multi" type="decimal"  />
+    {!v.mul1} * {!v.mul2} = {!v.multi}
+    
+    <br/><br/>
+    
+    <ui:button label="button dabaao" press="{!c.multip}" />
+    
+</aura:component>

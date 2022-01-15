@@ -1,0 +1,12 @@
+<apex:page standardController="Account" recordSetVar="accounts">
+    <apex:pageBlock title="My Accounts">
+    <apex:pageBlockTable value="{!accounts}" var="item">
+        <apex:column value="{!item.Name}"/>
+        <apex:column value="{!item.Id}"/>
+        <apex:column value="{!item.CreatedDate}"/>
+        </apex:pageBlockTable>
+    
+    
+    </apex:pageBlock>
+    
+</apex:page>

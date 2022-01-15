@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable,flexipage:availableforALLPageTypes" access="global">
+    
+    <c.NewRace />
+    
+    <c.RacesList />
+    
+</aura:component>

@@ -1,0 +1,4 @@
+<aura:component controller="SimpleServerSideController">
+    <aura:attribute name="firstName" type="String" default="I am the Iron Man"/>
+    <ui:button label="please click" press="{!c.echo}" />
+</aura:component>

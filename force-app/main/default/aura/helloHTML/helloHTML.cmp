@@ -1,0 +1,14 @@
+<aura:component >
+    
+    <div class = "white">
+       
+        Attack on titan
+    
+    </div>
+    <h1>Checkout the list of titans</h1>
+    <div class = "er">Eren is the founding titan</div>
+    <div class= "re">Reiner is the armour titan </div>
+    <div class = "ar">Armin is the colossal titan </div>
+    <div class = "an">Annie is the female titan</div>
+	
+</aura:component>

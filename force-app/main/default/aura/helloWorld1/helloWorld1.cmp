@@ -1,0 +1,11 @@
+<aura:component >
+    <div class="blur">
+    
+        <h1>Gangs of Wasseypur</h1>
+    
+    </div>
+    
+       
+    
+	
+</aura:component>

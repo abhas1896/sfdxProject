@@ -1,0 +1,92 @@
+<aura:component
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+                access="global"
+                controller="leadCreationApexController"
+                >
+    <aura:attribute name="CarsAvailableMap" type="Map" />
+    <aura:attribute
+                    name="leadObj"
+                    type="Lead"
+                    default="{'sobjectType':'lead',
+                             'FirstName':'',
+                             'LastName':'',
+                             'Company':'',
+                             'Email':'',
+                             'Lead_Address__c':''}
+                             'Cars_Available__c':''}"
+                    />
+    <aura:attribute name="message" type="String" default="" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <lightning:card iconName="standard:account" title="Add a Lead">
+        <div class="slds-p-around_medium">
+            <lightning:layout>
+                <lightning:layoutItem size="8" padding="around-small">
+                    <lightning:input
+                                     aura:id="FirstName"
+                                     label="FirstName"
+                                     type="text"
+                                     value="{!v.leadObj.FirstName}"
+                                     placeholder="First Name"
+                                     />
+                    <lightning:input
+                                     aura:id="LastName"
+                                     label="LastName"
+                                     type="text"
+                                     value="{!v.leadObj.LastName}"
+                                     placeholder="Last Name"
+                                     required="true"
+                                     />
+                    <lightning:input
+                                     aura:id="Company"
+                                     label="Company"
+                                     type="text"
+                                     value="{!v.leadObj.Company}"
+                                     placeholder="Company"
+                                     required="true"
+                                     />
+                    <lightning:input
+                                     aura:id="Email"
+                                     label="Email"
+                                     type="email"
+                                     value="{!v.leadObj.Email}"
+                                     placeholder="Email"
+                                     />
+                    <lightning:input
+                                     aura:id="Lead Address"
+                                     label="Lead Address"
+                                     value="{!v.leadObj.Lead_Address__c}"
+                                     placeholder="Lead Address"
+                                     />
+                    <lightning:select
+                                      aura:id="CarsAvailablePicklist"
+                                      value="{!v.leadObj.Cars_Available__c}"
+                                      onchange="{!c.handleCarsAvailable}"
+                                      label="Cars Available"
+                                      >
+                        <option value="">--None--</option>
+                        <aura:iteration
+                                        items="{!v.CarsAvailableMap}"
+                                        var="car"
+                                        indexVar="key"
+                                        >
+                            <option
+                                    text="{!car.value}"
+                                    value="{!car.key}"
+                                    selected="{!car.key==v.leadObj.Cars_Available__c}"
+                                    />
+                        </aura:iteration>
+                    </lightning:select>
+                    
+                    <lightning:button
+                                      label="Save"
+                                      onclick="{!c.save}"
+                                      variant="brand"
+                                      class="slds-m-top_medium"
+                                      />
+                </lightning:layoutItem>
+            </lightning:layout>
+            <p>{!v.message}</p>
+        </div>
+    </lightning:card>
+</aura:component>

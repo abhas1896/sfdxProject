@@ -1,0 +1,33 @@
+<aura:component controller="RaceController">
+    <aura:attribute name="race" type="Race__c"/>
+    <header>
+         <p> <ui:outputText value="{!'Information of  ' +v.race.Name}"/></p> 
+    </header>
+    <br/>
+   
+    <section>
+        <div>
+            
+            <p><ui:outputText value="{!v.race.Name}"/></p>               
+        </div>
+        
+        <div>
+            <p> <ui:outputText value="{!v.race.Race_Type__c}"/></p> 
+        </div>
+        
+        <div>
+            <p><ui:inputCheckbox change="{!c.handleUpdate}" value="{!v.race.Attended__c}"/></p> 
+        </div>
+        
+        <div>
+            <p><ui:outputDateTime value="{!v.race.Date_Time__c}"/></p>
+        </div>
+        
+        <div>
+            <p><ui:inputTextArea change="{!c.handleUpdate}" value="{!v.race.Results__c}"/></p>
+        </div>
+        <br/><br/>
+    </section>
+    
+           
+</aura:component>

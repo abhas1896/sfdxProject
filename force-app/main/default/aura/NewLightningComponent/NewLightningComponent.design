@@ -1,0 +1,4 @@
+<design:component label="The Mass">
+    <design:attribute name="heman" label="heman" description="who to say hello to"/>
+	
+</design:component>
